@@ -21,7 +21,7 @@ int main(){
 	m = i;
 	for(i = 0; i < m; i++){
 		printf("%d\n", n[i]);
-		total += n[i]
+		total += n[i];
 	}
 	fclose(fp);
 	ave = total / m;
