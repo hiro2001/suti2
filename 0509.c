@@ -6,7 +6,9 @@
 char com1[256], com2[256], one[256];
 
 void comper1(FILE *fp){
-	int i = 0, a = 0, cha;
+	int i = 0, a = 0;
+	char cha;
+
 	if (fp == NULL) {
     printf ("comp.txt file not found.\n");
     exit(0);
@@ -18,14 +20,17 @@ void comper1(FILE *fp){
 		if(cha == 0x0a && a == 0){
 			a++;
 			i = 0;
+			printf("\n");
 		}
 		if(cha != 0x0a){
 			switch(a){
 				case 0:
 					com1[i] = cha;
+					printf("%c", com1[i]);
 					break;
 				case 1:
 					com2[i] = cha;
+					printf("%c", com2[i]);
 					break;
 				default:
 					a = 0;
@@ -99,6 +104,7 @@ int main(){
 
 	fp1 = fopen("comp.txt", "r");
 	comper1(fp1);
+	printf("\n");
 	comper2();
 	return 0;
 }
