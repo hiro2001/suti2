@@ -22,17 +22,14 @@ void comper1(FILE *fp){
 			a++;
 			A = i;
 			i = 0;
-			printf("\n");
 		}
 		if(cha != 0x0a){
 			switch(a){
 				case 0:
 					com1[i] = cha;
-					printf("%c", com1[i]);
 					break;
 				case 1:
 					com2[i] = cha;
-					printf("%c", com2[i]);
 					break;
 				default:
 					a = 0;
@@ -133,7 +130,6 @@ int main(){
 
 	fp1 = fopen("comp.txt", "r");
 	comper1(fp1);
-	printf("\n");
 	comper2();
 	return 0;
 }
